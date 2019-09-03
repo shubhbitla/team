@@ -1,0 +1,41 @@
+<h1>Enter details of team player.</h1>
+<br>
+<div style="border: 1px solid; display: inline-block">
+<%= form_with scope: :player, url:teams_path ,  local: true do |form| %>
+  <br>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+  
+  <div>
+  	<%= form.label :age  %>
+  	<%= form.text_field :age%>
+  </div>	
+  <br>
+  
+  <div>
+  	<%= form.label :height %>
+  	<%= form.text_field :height %> 	
+  </div>
+  <br>
+
+  <div>
+  	<%= form.label :role %>
+  	<%= form.text_field :role %>
+  </div>
+  <br>	
+  
+  <div>
+  	<%= form.label :country %>
+  	<%= form.select :country_id, Country.all.collect {|c| [c.name, c.id]}, include_blank: true %>
+  </div>
+  <br><br>
+  <div>
+    <%= form.submit %>
+  </div><br><br>
+<% end %>
+</div> 
+<br>
+<%= link_to 'Back', countries_path %>

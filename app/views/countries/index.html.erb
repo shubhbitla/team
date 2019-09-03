@@ -1,0 +1,23 @@
+
+<h1>List of Countries</h1>
+
+<table border = 1 align="center"> 
+  <tr>
+    <th>S.No.</th>
+    <th>Name of Country</th> 
+  </tr>
+ 
+  <% @countries.each_with_index do |country, i| %>
+    <tr>
+      <td><%= i+1 %></td>
+      <td><%= link_to "#{country.name}", controller: 'teams', action: 'show', id: country %>
+        
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<br><br>
+<%= link_to 'Add Countries', new_country_path %>  
+<%= link_to 'Add Player', new_team_path %>

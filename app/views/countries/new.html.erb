@@ -1,0 +1,11 @@
+<%= form_with scope: :country, url: countries_path, local: true do |form| %>
+   <br><h1>Enter Name of Country </h1>
+  <div>
+	<%= form.label :name %>
+	<%= form.text_field :name %>
+  </div> <br>
+  <div>
+	<%= form.submit %>
+  </div>
+<% end %> <br>
+<%= link_to 'Back', countries_path %>
